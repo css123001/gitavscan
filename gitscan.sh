@@ -79,7 +79,8 @@ fi
 if [ -s "/output.txt" ]; then
   echo "Scan finished with detections $(date)"
   cat /output.txt
+  echo "::set-env name=AV_STATUS::true"
   exit 1
 fi
-
+echo "::set-env name=AV_STATUS::false"
 echo "Scan finished $(date)"
