@@ -30,7 +30,7 @@ fi
 /usr/bin/freshclam
 
 echo "Beginning scan..."
-
+exit 1
 echo "::set-env name=AV_STATUS::false"
 
 if ! [ -d ".git" ]; then
