@@ -33,6 +33,7 @@ echo "Beginning scan..."
 
 echo "::set-env name=AV_STATUS::false"
 
+
 if ! [ -d ".git" ]; then
   echo "ERROR: Not a git repository, skipping history scan."
   exit 1
@@ -84,5 +85,5 @@ if [ -s "/output.txt" ]; then
   echo "::set-env name=AV_STATUS::true"
   exit 1
 fi
-
+echo "::set-env name=LATEST_COMMIT::$(git rev-parse HEAD)"
 echo "Scan finished $(date)"
