@@ -85,5 +85,5 @@ if [ -s "/output.txt" ]; then
   echo "::set-env name=AV_STATUS::true"
   exit 1
 fi
-echo "::set-env name=LATEST_COMMIT::$(git rev-parse HEAD)"
+echo "::set-env name=LATEST_COMMIT::$REPO"
 echo "Scan finished $(date)"
